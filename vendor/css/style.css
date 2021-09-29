@@ -1,9 +1,9 @@
 :root {
   --cormorant: "Cormorant Garamond", serif;
   --playfair: "Playfair Display", serif;
-  --orange: #F79859;
+  --orange: #f79859;
   --black: #060605;
-  --white: #EBEBEB;
+  --white: #ebebeb;
 }
 
 @-webkit-keyframes pulse {
@@ -134,10 +134,48 @@ body .container header nav .logotype {
 }
 
 body .container header nav .spacing {
-  width: calc( 100% - 150px - 60px);
+  width: calc(100% - 150px - 60px);
 }
 
-body .container header nav button {
+body .container header nav #menu-btn {
+  display: none;
+}
+
+body .container header nav .checked + label i:nth-child(1) {
+  opacity: 1 !important;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  visibility: visible;
+}
+
+body .container header nav .checked + label i:nth-child(2) {
+  opacity: 0;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  visibility: hidden;
+}
+
+body .container header nav .checked + label + .nav-list {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0px) !important;
+  -webkit-transform: translateX(0px) !important;
+  -moz-transform: translateX(0px) !important;
+  -ms-transform: translateX(0px) !important;
+  -o-transform: translateX(0px) !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+body .container header nav label {
   width: 60px;
   height: 50px;
   padding: 10px;
@@ -153,26 +191,39 @@ body .container header nav button {
   background: unset;
   outline: unset;
   border: unset;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-body .container header nav button i {
+body .container header nav label i {
   color: var(--orange);
   font-size: 32px;
   padding-right: 15px;
-}
-
-body .container header nav button:focus + .nav-list {
-  opacity: 1;
   transition: all 0.3s ease-in-out;
-  transform: translateX(0px) !important;
-  -webkit-transform: translateX(0px) !important;
-  -moz-transform: translateX(0px) !important;
-  -ms-transform: translateX(0px) !important;
-  -o-transform: translateX(0px) !important;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
+}
+
+body .container header nav label i:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  visibility: hidden;
+}
+
+body .container header nav label i:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  visibility: visible;
 }
 
 body .container header nav .nav-list {
@@ -215,8 +266,8 @@ body .container header nav .nav-list {
 
 body .container header nav .nav-list a {
   font-size: 24px;
-  padding-right: 15px;
-  height: 90px;
+  margin: 15px 15px;
+  height: 60px;
   width: clamp(250px, 90%, 400px);
   text-decoration: none;
   color: unset;
@@ -232,11 +283,15 @@ body .container header nav .nav-list a .nav-pil {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 90px;
+  height: 60px;
   width: 100%;
   position: relative;
   text-align: right;
   padding-right: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #181813, #f7985900);
 }
 
 body .container header nav .nav-list a .nav-pil:before {
@@ -457,7 +512,13 @@ body .container .content .Contact {
     width: 100%;
   }
   body .container header nav .nav-list a {
-    width: clamp(250px, 90%, 400px);
+    width: clamp(250px, 50%, 400px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding-right: unset !important;
     text-align: center;
   }
@@ -469,11 +530,11 @@ body .container .content .Contact {
     margin-right: 0px !important;
     padding-right: 0px !important;
     text-align: center;
+    border-image-source: linear-gradient(to left, #181813, #181813);
   }
   body .container header nav .nav-list a .nav-pil::before {
-    bottom: 10px;
-    left: 0px;
-    width: 100%;
+    width: 50%;
+    right: unset !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

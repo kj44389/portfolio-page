@@ -17,7 +17,7 @@
         rel="stylesheet">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/1b25280c73.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" integrity="sha512-sVSECYdnRMezwuq5uAjKQJEcu2wybeAPjU4VJQ9pCRcCY4pIpIw4YMHIOQ0CypfwHRvdSPbH++dA3O4Hihm/LQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+   
 </head>
 
 <body>
@@ -33,7 +33,11 @@
                     </svg>
                 </div>
                 <div class="spacing"></div>
-                <button><i class="fas fa-bars"></i></button>
+                <input type="checkbox" id='menu-btn'>
+                <label for="menu-btn">
+                    <i class="fas fa-times"></i>
+                    <i class="fas fa-bars"></i>
+                </label>
                 <ul class='nav-list'>
                     <a href="http://" target="_blank" rel="noopener noreferrer">
                         <li class="nav-pil">Home</li>
@@ -90,6 +94,7 @@
     </div>
 
     <script src="./vendor/js/script.js"></script>
+    <script src="./vendor/js/eventListenery.js"></script>
 </body>
 
 </html>
