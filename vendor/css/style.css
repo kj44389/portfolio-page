@@ -440,7 +440,7 @@ body .container .content .AboutMe .about-me-headline {
   transform: translateX(-50%);
   z-index: 2;
   font-family: var(--playfair);
-  font-size: 38px;
+  font-size: clamp(34px, calc(10vw + 1rem), 45px);
   text-align: center;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -456,7 +456,7 @@ body .container .content .AboutMe .about-me-text {
           transform: translateX(-50%);
   z-index: 2;
   font-family: var(--cormorant);
-  font-size: 26px;
+  font-size: clamp(18px, calc(2vw + 1rem), 26px);
   line-height: 1.4;
   text-align: center;
   width: clamp(320px, 100%, 50ch);
@@ -486,8 +486,132 @@ body .container .content .AboutMe .about-me-image {
 
 body .container .content .Skills {
   width: 100%;
-  height: 850px;
   background: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .content .Skills .skills-header {
+  font-family: var(--playfair);
+  font-weight: 900;
+  font-size: 38px;
+  margin: 120px 0px;
+  color: var(--orange);
+}
+
+body .container .content .Skills .skills-level-header {
+  font-family: var(--playfair);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--black);
+  margin-bottom: 30px;
+}
+
+body .container .content .Skills .skills-line {
+  width: 100%;
+  padding: 0px 50px 150px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .container .content .Skills .skills-line .skill {
+  width: clamp(150px, 100%, 200px);
+  height: 200px;
+  background-color: #e1e1e1;
+  margin: 10px 15px;
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+body .container .content .Skills .skills-line .skill:hover {
+  margin: 13px 25px;
+  background-color: #f0f0f0;
+}
+
+body .container .content .Skills .skills-line .skill:hover .skill-image svg {
+  width: 95px;
+  height: 95px;
+}
+
+body .container .content .Skills .skills-line .skill:hover .skill-image svg path {
+  fill: var(--orange);
+}
+
+body .container .content .Skills .skills-line .skill:hover .skill-name {
+  font-size: 21px;
+}
+
+body .container .content .Skills .skills-line .skill .skill-image {
+  padding: 20px;
+}
+
+body .container .content .Skills .skills-line .skill .skill-image svg {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+body .container .content .Skills .skills-line .skill .skill-image svg path {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  fill: #060605;
+}
+
+body .container .content .Skills .skills-line .skill .skill-name {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  font-family: var(--cormorant);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--black);
 }
 
 body .container .content .Projects {
@@ -535,6 +659,9 @@ body .container .content .Contact {
   body .container header nav .nav-list a .nav-pil::before {
     width: 50%;
     right: unset !important;
+  }
+  body .container .content .AboutMe {
+    height: 950px;
   }
 }
 /*# sourceMappingURL=style.css.map */

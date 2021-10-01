@@ -115,11 +115,10 @@ body {
                     width: calc(100% - 150px - 60px);
                 }
 
-                #menu-btn{
+                #menu-btn {
                     display: none;
-                    
                 }
-                .checked + label{
+                .checked + label {
                     i {
                         &:nth-child(1) {
                             opacity: 1 !important;
@@ -142,7 +141,7 @@ body {
                         }
                     }
                 }
-                .checked + label + .nav-list{
+                .checked + label + .nav-list {
                     opacity: 1;
                     transition: all 0.3s ease-in-out;
                     transform: translateX(0px) !important;
@@ -155,7 +154,7 @@ body {
                     -ms-transition: all 0.3s ease-in-out;
                     -o-transition: all 0.3s ease-in-out;
                 }
-                label{
+                label {
                     width: 60px;
                     height: 50px;
                     padding: 10px;
@@ -362,7 +361,7 @@ body {
                     transform: translateX(-50%);
                     z-index: 2;
                     font-family: var(--playfair);
-                    font-size: 38px;
+                    font-size: clamp(34px, calc(10vw + 1rem), 45px);
                     text-align: center;
                     -webkit-transform: translateX(-50%);
                     -moz-transform: translateX(-50%);
@@ -376,7 +375,7 @@ body {
                     transform: translateX(-50%);
                     z-index: 2;
                     font-family: var(--cormorant);
-                    font-size: 26px;
+                    font-size: clamp(18px, calc(2vw + 1rem), 26px);
                     line-height: 1.4;
                     text-align: center;
 
@@ -407,8 +406,101 @@ body {
 
             .Skills {
                 width: 100%;
-                height: 850px;
+                // height: 850px;
                 background: var(--white);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .skills-header {
+                    font-family: var(--playfair);
+                    font-weight: fontweight("black");
+                    font-size: 38px;
+                    margin: 120px 0px;
+                    color: var(--orange);
+                }
+                .skills-level-header {
+                    font-family: var(--playfair);
+                    font-weight: fontweight("bold");
+                    font-size: 24px;
+                    color: var(--black);
+                    margin-bottom: 30px;
+                }
+                .skills-line {
+                    width: 100%;
+                    padding: 0px 50px 150px 50px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    .skill {
+                        width: clamp(150px, 100%, 200px);
+                        height: 200px;
+                        background-color: #e1e1e1;
+                        margin: 10px 15px;
+                        padding: 20px;
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        transition: all 0.3s ease-in-out;
+                        -webkit-transition: all 0.3s ease-in-out;
+                        -moz-transition: all 0.3s ease-in-out;
+                        -ms-transition: all 0.3s ease-in-out;
+                        -o-transition: all 0.3s ease-in-out;
+                        &:hover {
+                            margin: 13px 25px;
+                            background-color: #f0f0f0;
+                            .skill-image {
+                                svg {
+                                    width:95px;
+                                    height: 95px;
+                                    path {
+                                        fill: var(--orange);
+                                        // fill: var(--orange);
+                                    }
+                                }
+                            }
+                            .skill-name{
+                                font-size: 21px;
+                            }
+                        }
+                        .skill-image {
+                            padding: 20px;
+                            svg {
+                                transition: all 0.3s ease-in-out;
+                                -webkit-transition: all 0.3s ease-in-out;
+                                -moz-transition: all 0.3s ease-in-out;
+                                -ms-transition: all 0.3s ease-in-out;
+                                -o-transition: all 0.3s ease-in-out;
+                                path {
+                                    transition: all 0.3s ease-in-out;
+                                    -webkit-transition: all 0.3s ease-in-out;
+                                    -moz-transition: all 0.3s ease-in-out;
+                                    -ms-transition: all 0.3s ease-in-out;
+                                    -o-transition: all 0.3s ease-in-out;
+                                    fill: #060605;
+                                    // fill: var(--orange);
+                                }
+                            }
+                        }
+                        .skill-name {
+                            transition: all 0.3s ease-in-out;
+                            -webkit-transition: all 0.3s ease-in-out;
+                            -moz-transition: all 0.3s ease-in-out;
+                            -ms-transition: all 0.3s ease-in-out;
+                            -o-transition: all 0.3s ease-in-out;
+                            font-family: var(--cormorant);
+                            font-weight: fontweight("bold");
+                            font-size: 20px;
+                            color: var(--black);
+                        }
+                    }
+                }
             }
 
             .Projects {
@@ -456,6 +548,11 @@ body {
                             }
                         }
                     }
+                }
+            }
+            .content {
+                .AboutMe {
+                    height: 950px;
                 }
             }
         }
