@@ -18,7 +18,7 @@ async function insertText(element, text_from, ms) {
 (async () => {
     // CONFIG SECTION
     let config = {
-        initialSleep: 5000, // in (ms), how much time before starting code
+        initialSleep: 1000, // in (ms), how much time before starting code
         operationSleep: 50, // in (ms), how much time before cutting/adding letter
         afterPopingSleep: 1000, // in (ms), how much time to wait before adding new text
         afterInsertingSleep: 2000, // in (ms), how much time to wait after adding new text. 
