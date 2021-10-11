@@ -32,7 +32,7 @@ async function insertText(element, text_from, ms) {
     await sleep(config.initialSleep); // initial sleep 
 
     for (let x of config.texts) { // get each text from array (ES6 for iterator) 
-        let element = document.getElementById("text_to_change");
+        let element = document.getElementById("text-to-change");
         await popText(element, config.operationSleep); // delete text from element with "pop effect"
         await sleep(config.afterPopingSleep);
         await insertText(element, x, config.operationSleep); // inserting text from array
