@@ -42,8 +42,8 @@
 
 @-webkit-keyframes border_pulse_animation {
   0% {
-    -webkit-box-shadow: inset 0 0 0 0px transparent,inset 0 0 0 0px transparent;
-            box-shadow: inset 0 0 0 0px transparent,inset 0 0 0 0px transparent;
+    -webkit-box-shadow: inset 0 0 0 0px transparent, inset 0 0 0 0px transparent;
+            box-shadow: inset 0 0 0 0px transparent, inset 0 0 0 0px transparent;
   }
   100% {
     -webkit-box-shadow: inset 0 0 0 0px transparent, inset 0 0 0 2px var(--orange);
@@ -53,8 +53,8 @@
 
 @keyframes border_pulse_animation {
   0% {
-    -webkit-box-shadow: inset 0 0 0 0px transparent,inset 0 0 0 0px transparent;
-            box-shadow: inset 0 0 0 0px transparent,inset 0 0 0 0px transparent;
+    -webkit-box-shadow: inset 0 0 0 0px transparent, inset 0 0 0 0px transparent;
+            box-shadow: inset 0 0 0 0px transparent, inset 0 0 0 0px transparent;
   }
   100% {
     -webkit-box-shadow: inset 0 0 0 0px transparent, inset 0 0 0 2px var(--orange);
@@ -68,6 +68,7 @@
   --orange: #f79859;
   --black: #060605;
   --white: #ebebeb;
+  --scroll-height: 0%;
 }
 
 * {
@@ -75,6 +76,12 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a,
+button,
+input {
+  cursor: pointer;
 }
 
 html {
@@ -113,11 +120,12 @@ body .container {
   scroll-behavior: smooth;
   background-size: cover;
   overflow-x: hidden;
+  overflow-y: visible;
 }
 
 body .container header {
   width: 100%;
-  height: 50px;
+  height: 60px;
   z-index: 10;
   position: fixed;
   top: 0;
@@ -128,6 +136,7 @@ body .container header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: var(--black);
 }
 
 body .container header nav {
@@ -146,7 +155,7 @@ body .container header nav {
 body .container header nav .logotype {
   width: 60px;
   height: 100%;
-  font-size: 32px;
+  font-size: 42px;
   font-family: var(--cormorant);
   font-weight: 700;
   color: var(--orange);
@@ -160,6 +169,11 @@ body .container header nav .logotype {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 10px;
+  transform: translateY(-5%);
+  -webkit-transform: translateY(-5%);
+  -moz-transform: translateY(-5%);
+  -ms-transform: translateY(-5%);
+  -o-transform: translateY(-5%);
 }
 
 body .container header nav .spacing {
@@ -175,7 +189,7 @@ body .container header nav a .portfolio-highlight {
   margin-right: 20px;
   padding: 5px;
   background-color: transparent;
-  color: var(--orange);
+  color: var(--white);
   border: 1px solid var(--orange);
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -185,11 +199,21 @@ body .container header nav a .portfolio-highlight {
   font-family: var(--playfair);
   font-size: 16px;
   font-weight: 400;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+body .container header nav a .portfolio-highlight:hover {
+  background-color: var(--orange);
 }
 
 body .container header nav #menu-btn {
   z-index: 5;
   display: none;
+  cursor: pointer;
 }
 
 body .container header nav .checked + label i {
@@ -252,8 +276,9 @@ body .container header nav label {
 }
 
 body .container header nav label i {
-  color: var(--orange);
+  color: var(--white);
   font-size: 32px;
+  cursor: pointer;
   padding-right: 15px;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -283,7 +308,7 @@ body .container header nav label i:nth-child(2) {
 }
 
 body .container header nav label i:hover {
-  color: #f3ab7b;
+  color: var(--orange);
 }
 
 body .container header nav .nav-list {
@@ -387,6 +412,74 @@ body .container .content {
   height: 100%;
   width: 100%;
   z-index: 2;
+}
+
+body .container .content .scroll-progress {
+  width: 20px;
+  height: 400px;
+  position: fixed;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+body .container .content .scroll-progress .scroll-line {
+  height: 100%;
+  width: 3px;
+  position: absolute;
+  content: "";
+  right: 50%;
+  top: 0;
+  background-color: #cacaca;
+  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+}
+
+body .container .content .scroll-progress .scroll-line:before {
+  content: "";
+  width: 100%;
+  height: var(--scroll-height);
+  background-color: var(--orange);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body .container .content .scroll-progress .scroll-point {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cacaca;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  top: calc(var(--point) * 98px);
+  right: 50%;
+  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+}
+
+body .container .content .scroll-progress .point-active {
+  background-color: var(--orange);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 body .container .content .welcome-box {
@@ -906,6 +999,9 @@ body .container .content .Foother .credits {
     width: 100%;
     max-width: 700px;
   }
+  body .container .content .scroll-progress {
+    display: none;
+  }
 }
 
 @media (min-width: 270px) and (max-width: 600px) {
@@ -953,6 +1049,9 @@ body .container .content .Foother .credits {
   body .container header nav .nav-list a .nav-pil::before {
     width: 50%;
     right: unset !important;
+  }
+  body .container .content .scroll-progress {
+    display: none;
   }
   body .container .content .welcome-box #text {
     font-size: 40px;
