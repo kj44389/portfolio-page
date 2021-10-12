@@ -25,5 +25,38 @@
         }
     })
 
+
+    //on scroll fill progress bar
+    document.querySelector('.container').addEventListener('scroll', (event) => {
+
+        let scrollHeight = document.querySelector('.container').scrollHeight;
+        let scrollPos = document.querySelector('.container').scrollTop;
+
+        let value = (scrollPos / (scrollHeight - window.innerHeight)).toFixed(2) * 100;
+        let points = document.querySelectorAll('.scroll-point');
+        if (value >= 0 && value <= 23) {
+            points[0].classList.add('point-active')
+            points[1].classList.remove('point-active');
+        }
+        else if (value >= 24 && value <= 48) {
+            points[1].classList.add('point-active')
+            points[2].classList.remove('point-active');
+        }
+        else if (value >= 49 && value <= 73) {
+            points[2].classList.add('point-active')
+            points[3].classList.remove('point-active');
+        }
+        else if (value >= 74 && value <= 98) {
+            points[3].classList.add('point-active')
+            points[4].classList.remove('point-active');
+        }
+        else if (value >= 99 && value <= 100) {
+            points[4].classList.add('point-active')
+        }
+
+        document.documentElement.style.setProperty('--scroll-height',value+"%")
+
+    })
+
     
  })();
