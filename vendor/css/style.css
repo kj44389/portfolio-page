@@ -174,6 +174,7 @@ body .container header nav .logotype {
   -moz-transform: translateY(-5%);
   -ms-transform: translateY(-5%);
   -o-transform: translateY(-5%);
+  z-index: 12;
 }
 
 body .container header nav .spacing {
@@ -464,7 +465,7 @@ body .container .content .scroll-progress .scroll-point {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  top: calc(var(--point) * 98px);
+  top: var(--top);
   right: 50%;
   transform: translateX(50%);
   -webkit-transform: translateX(50%);
@@ -870,7 +871,99 @@ body .container .content .Skills .skills-line .skill .skill-name {
 
 body .container .content .Projects {
   width: 100%;
-  height: 850px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5%;
+}
+
+body .container .content .Projects .project {
+  min-width: 250px;
+  width: 23rem;
+  background-color: #0a0a0a;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin: 30px;
+}
+
+body .container .content .Projects .project .project-image {
+  width: 100%;
+  position: relative;
+}
+
+body .container .content .Projects .project .project-image img {
+  min-width: 250px;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+}
+
+body .container .content .Projects .project .project-image .project-icons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+body .container .content .Projects .project .project-image .project-icons a i {
+  color: var(--orange);
+  font-size: 24px;
+  margin: 5px;
+}
+
+body .container .content .Projects .project .project-info {
+  padding: 20px;
+  line-height: 1.5;
+}
+
+body .container .content .Projects .project .project-info .project-name {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--playfair);
+}
+
+body .container .content .Projects .project .project-info .project-desc {
+  margin-top: 10px;
+  line-height: 1.3;
+  font-size: 18px;
+  font-family: var(--cormorant);
+}
+
+body .container .content .Projects .project .project-techstack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 0 20px 20px 20px;
+}
+
+body .container .content .Projects .project .project-techstack .tech-pil {
+  background-color: var(--orange);
+  padding: 5px 10px 5px 10px;
+  margin: 15px 15px 0 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  color: var(--black);
+  font-size: 10px;
+  font-family: "sans-serif";
 }
 
 body .container .content .Foother {
@@ -935,14 +1028,14 @@ body .container .content .Foother form .form-line .input-group label {
   color: var(--orange);
   font-weight: 700;
   font-size: 20px;
+  line-height: 1;
 }
 
 body .container .content .Foother form .form-line .input-group .form-inputs {
   display: block;
   width: clamp(300px, calc(100vw - 60px), 100%);
-  min-height: 125px;
-  height: auto;
-  padding: 50px 20px 20px 20px;
+  min-height: 103px;
+  padding: 40px 20px 20px 20px;
   overflow: hidden;
   margin: 15px 15px;
   border: 1px solid var(--black);
@@ -950,7 +1043,7 @@ body .container .content .Foother form .form-line .input-group .form-inputs {
 }
 
 body .container .content .Foother form .form-line .input-group #form-msg {
-  min-height: 200px;
+  min-height: 140px;
   line-height: 1.5;
 }
 
@@ -1089,7 +1182,7 @@ body .container .content .Foother .credits {
   }
   body .container .content .Foother form .form-line .input-group .form-inputs {
     width: clamp(300px, calc(100vw - 60px), 100%);
-    padding: 50px 20px 20px 20px;
+    padding: 40px 20px 20px 20px;
     margin: 15px 0;
   }
   body .container .content .Foother form .form-line #form-submit {
