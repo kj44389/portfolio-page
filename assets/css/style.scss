@@ -14,9 +14,11 @@ $fonts-weights: (
     0% {
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -26,6 +28,7 @@ $fonts-weights: (
     0% {
         top: 25px;
     }
+
     100% {
         top: 45px;
     }
@@ -35,10 +38,12 @@ $fonts-weights: (
     0% {
         box-shadow: inset 0 0 0 0px transparent, inset 0 0 0 0px transparent;
     }
+
     100% {
         box-shadow: inset 0 0 0 0px transparent, inset 0 0 0 2px var(--orange);
     }
 }
+
 //
 @function fontweight($weight) {
     @return map-get($map: $fonts-weights, $key: $weight);
@@ -74,6 +79,7 @@ $fonts-weights: (
     margin: 0;
     padding: 0;
 }
+
 a,
 button,
 input {
@@ -84,6 +90,7 @@ html {
     width: 100%;
     height: 100%;
 }
+
 body {
     width: 100%;
     height: 100%;
@@ -106,6 +113,7 @@ body {
         background-size: cover;
         overflow-x: hidden;
         overflow-y: visible;
+
         header {
             width: 100%;
             height: 60px;
@@ -142,9 +150,11 @@ body {
                     -o-transform: translateY(-5%);
                     z-index: 12;
                 }
+
                 .spacing {
                     width: calc(100% - 60px - 60px);
                 }
+
                 a {
                     z-index: 12;
 
@@ -168,20 +178,24 @@ body {
                         -moz-transition: all 0.3s ease-in-out;
                         -ms-transition: all 0.3s ease-in-out;
                         -o-transition: all 0.3s ease-in-out;
+
                         &:hover {
                             background-color: var(--orange);
                         }
                     }
                 }
+
                 #menu-btn {
                     z-index: 5;
                     display: none;
                     cursor: pointer;
                 }
+
                 .checked + label {
                     // after clicking on bars
                     i {
                         z-index: 8;
+
                         &:nth-child(1) {
                             opacity: 1 !important;
                             transform: translateX(100%);
@@ -203,6 +217,7 @@ body {
                         }
                     }
                 }
+
                 .checked + label + .nav-list {
                     //what happend to menu after clicking on bars
                     opacity: 1;
@@ -218,6 +233,7 @@ body {
                     -ms-transition: all 0.3s ease-in-out;
                     -o-transition: all 0.3s ease-in-out;
                 }
+
                 label {
                     width: 60px;
                     height: 50px;
@@ -229,6 +245,7 @@ body {
                     outline: unset;
                     border: unset;
                     transition: all 0.3s ease-in-out;
+
                     i {
                         color: var(--white);
                         font-size: 32px;
@@ -266,6 +283,7 @@ body {
                         }
                     }
                 }
+
                 .nav-list {
                     transition: all 0.3s ease-in-out;
                     z-index: -1;
@@ -291,6 +309,7 @@ body {
                     -moz-transition: all 0.3s ease-in-out;
                     -ms-transition: all 0.3s ease-in-out;
                     -o-transition: all 0.3s ease-in-out;
+
                     a {
                         font-size: 24px;
                         margin: 15px 15px;
@@ -299,6 +318,7 @@ body {
 
                         text-decoration: none;
                         color: unset;
+
                         .nav-pil {
                             display: flex;
                             justify-content: flex-end;
@@ -312,6 +332,7 @@ body {
                             border-style: solid;
                             border-image-slice: 1;
                             border-image-source: linear-gradient(to left, #181813, #f7985900);
+
                             &:before {
                                 content: "";
                                 position: absolute;
@@ -347,6 +368,7 @@ body {
                 }
             }
         }
+
         .content {
             height: 100%;
             width: 100%;
@@ -364,6 +386,7 @@ body {
                 -moz-transform: translateY(-50%);
                 -ms-transform: translateY(-50%);
                 -o-transform: translateY(-50%);
+
                 .scroll-line {
                     height: 100%;
                     width: 3px;
@@ -377,6 +400,7 @@ body {
                     -moz-transform: translateX(50%);
                     -ms-transform: translateX(50%);
                     -o-transform: translateX(50%);
+
                     &:before {
                         content: "";
                         width: 100%;
@@ -387,6 +411,7 @@ body {
                         left: 0;
                     }
                 }
+
                 .scroll-point {
                     position: absolute;
                     content: "";
@@ -406,6 +431,7 @@ body {
                     -ms-transform: translateX(50%);
                     -o-transform: translateX(50%);
                 }
+
                 .point-active {
                     background-color: var(--orange);
                     transition: all 0.3s ease-in-out;
@@ -436,6 +462,7 @@ body {
                     height: 50%;
                     width: 100%;
                     position: relative;
+
                     .go-to-portfolio {
                         position: absolute;
                         bottom: 1.5em;
@@ -446,6 +473,7 @@ body {
                         -moz-transform: translateX(-50%);
                         -ms-transform: translateX(-50%);
                         -o-transform: translateX(-50%);
+
                         a {
                             button {
                                 width: 180px;
@@ -467,6 +495,7 @@ body {
                                 -moz-transition: all 0.3s ease-in-out;
                                 -ms-transition: all 0.3s ease-in-out;
                                 -o-transition: all 0.3s ease-in-out;
+
                                 &:hover {
                                     background-color: var(--orange);
                                     color: var(--black);
@@ -475,6 +504,7 @@ body {
                             }
                         }
                     }
+
                     #text-to-change {
                         min-width: 1px;
                         min-height: $welcomebox-text;
@@ -497,15 +527,18 @@ body {
                         }
                     }
                 }
+
                 .scroll-down {
                     @include flexbox-center();
                     flex-direction: column;
+
                     .scroll-down-text {
                         font-family: var(--cormorant);
                         font-weight: fontweight("bold");
                         font-size: $welcomebox-scroll;
                         line-height: 1.4;
                     }
+
                     i {
                         color: var(--orange);
                         position: relative;
@@ -537,6 +570,7 @@ body {
                     opacity: 0.1;
                     z-index: 1;
                 }
+
                 .about-me-headline {
                     position: absolute;
                     top: 350px;
@@ -551,6 +585,7 @@ body {
                     -ms-transform: translateX(-50%);
                     -o-transform: translateX(-50%);
                 }
+
                 .about-me-text {
                     position: absolute;
                     top: 450px;
@@ -566,6 +601,7 @@ body {
                     padding: 40px;
                     background: linear-gradient(to bottom, hsla(60, 9%, 2%, 0), hsl(60, 9%, 2%));
                 }
+
                 .about-me-image {
                     position: absolute;
                     top: 220px;
@@ -609,6 +645,7 @@ body {
                     -o-transform: rotate(180deg);
                     z-index: 1;
                 }
+
                 &:after {
                     content: "";
                     width: 100%;
@@ -620,6 +657,7 @@ body {
                     bottom: 0;
                     z-index: 1;
                 }
+
                 .water-mark {
                     font-size: clamp(80px, calc(60vw + 1em), 30em);
                     position: absolute;
@@ -634,6 +672,7 @@ body {
                     -ms-transform: rotate(-10deg) translateX(-10%);
                     -o-transform: rotate(-10deg) translateX(-10%);
                 }
+
                 .skills-header {
                     font-family: var(--playfair);
                     font-weight: fontweight("black");
@@ -642,6 +681,7 @@ body {
                     color: var(--orange);
                     z-index: 2;
                 }
+
                 .skills-level-header {
                     font-family: var(--playfair);
                     font-weight: fontweight("bold");
@@ -650,6 +690,7 @@ body {
                     margin-bottom: 30px;
                     z-index: 2;
                 }
+
                 .skills-line {
                     width: 100%;
                     padding: 0px 50px 150px 50px;
@@ -658,6 +699,7 @@ body {
                     flex-wrap: wrap;
                     justify-content: center;
                     z-index: 2;
+
                     .skill {
                         width: clamp(150px, 100%, 200px);
                         height: 200px;
@@ -678,27 +720,33 @@ body {
                         -moz-transition: all 0.3s ease-in-out;
                         -ms-transition: all 0.3s ease-in-out;
                         -o-transition: all 0.3s ease-in-out;
+
                         &:hover {
                             margin: 13px 25px;
                             background-color: #f0f0f0;
+
                             .skill-image {
                                 svg {
                                     width: 95px;
                                     height: 95px;
                                 }
                             }
+
                             .skill-name {
                                 font-size: 21px;
                             }
                         }
+
                         .skill-image {
                             padding: 20px;
+
                             svg {
                                 transition: all 0.3s ease-in-out;
                                 -webkit-transition: all 0.3s ease-in-out;
                                 -moz-transition: all 0.3s ease-in-out;
                                 -ms-transition: all 0.3s ease-in-out;
                                 -o-transition: all 0.3s ease-in-out;
+
                                 path {
                                     transition: all 0.3s ease-in-out;
                                     -webkit-transition: all 0.3s ease-in-out;
@@ -709,6 +757,7 @@ body {
                                 }
                             }
                         }
+
                         .skill-name {
                             transition: all 0.3s ease-in-out;
                             -webkit-transition: all 0.3s ease-in-out;
@@ -730,6 +779,7 @@ body {
                 flex-flow: row wrap;
                 justify-content: center;
                 padding: 5%;
+
                 .project {
                     // width: 400px;
                     // height: 400px;
@@ -742,10 +792,23 @@ body {
                     -ms-border-radius: 10px;
                     -o-border-radius: 10px;
                     margin: 30px;
+
                     .project-image {
+                        position: relative;
                         width: 100%;
-                        img {
+
+                        .img {
+                            transition: all 0.3s ease-in-out;
+                            -webkit-transition: all 0.3s ease-in-out;
+                            -moz-transition: all 0.3s ease-in-out;
+                            -ms-transition: all 0.3s ease-in-out;
+                            -o-transition: all 0.3s ease-in-out;
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            background-position-x: center;
+                            background-position-y: center;
                             min-width: 250px;
+                            min-height: 200px;
                             width: 100%;
                             border-radius: 5px 5px 0 0;
                             -webkit-border-radius: 5px 5px 0 0;
@@ -753,28 +816,43 @@ body {
                             -ms-border-radius: 5px 5px 0 0;
                             -o-border-radius: 5px 5px 0 0;
                         }
-                        position: relative;
+
                         .project-icons {
                             position: absolute;
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
                             bottom: 10px;
-                            right: 10px;
+                            right: 0px;
+                            background-color: rgb(10, 10, 10);
+
                             a {
                                 i {
                                     color: var(--orange);
                                     font-size: 24px;
                                     margin: 5px;
+                                    transition: all 0.3s ease-in-out;
+                                    -webkit-transition: all 0.3s ease-in-out;
+                                    -moz-transition: all 0.3s ease-in-out;
+                                    -ms-transition: all 0.3s ease-in-out;
+                                    -o-transition: all 0.3s ease-in-out;
+                                    &:hover {
+                                        color: var(--white);
+                                    }
                                 }
                             }
                         }
                     }
+
                     .project-info {
                         padding: 20px;
                         line-height: 1.5;
+
                         .project-name {
                             font-size: 20px;
                             font-weight: fontweight("bold");
                             font-family: var(--playfair);
                         }
+
                         .project-desc {
                             margin-top: 10px;
                             line-height: 1.3;
@@ -782,11 +860,13 @@ body {
                             font-family: var(--cormorant);
                         }
                     }
+
                     .project-techstack {
                         display: flex;
 
                         flex-flow: row wrap;
                         padding: 0 20px 20px 20px;
+
                         .tech-pil {
                             background-color: var(--orange);
                             padding: 5px 10px 5px 10px;
@@ -824,17 +904,20 @@ body {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+
                     .form-line {
                         width: clamp(200px, 100%, 700px);
                         padding: 0 20px;
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: center;
+
                         .input-group {
                             width: 100%;
                             position: relative;
                             display: flex;
                             justify-content: center;
+
                             label {
                                 position: absolute;
                                 top: 25px;
@@ -864,6 +947,7 @@ body {
                                 line-height: 1.5;
                             }
                         }
+
                         #form-submit {
                             width: clamp(200px, calc(100vw - 1em), 300px);
                             height: 40px;
@@ -879,6 +963,15 @@ body {
                             font-family: var(--playfair);
                             font-weight: fontweight("bold");
                             letter-spacing: 2px;
+                            transition: all 0.3s ease-in-out;
+                            -webkit-transition: all 0.3s ease-in-out;
+                            -moz-transition: all 0.3s ease-in-out;
+                            -ms-transition: all 0.3s ease-in-out;
+                            -o-transition: all 0.3s ease-in-out;
+                            &:hover {
+                                // background-color: var(--black);
+                                background-color: #303030;
+                            }
                         }
                     }
                 }
@@ -888,6 +981,7 @@ body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
                     i {
                         color: var(--orange);
                         font-size: 28px;
@@ -902,6 +996,7 @@ body {
         }
     }
 }
+
 @media (min-width: 601px) and (max-width: 1000px) {
     body {
         .container {
@@ -911,6 +1006,7 @@ body {
                     max-width: 700px;
                 }
             }
+
             .content {
                 .scroll-progress {
                     display: none;
@@ -926,23 +1022,27 @@ body {
             header {
                 nav {
                     width: 100%;
+
                     label {
                         @media (min-width: 270px) and (max-width: 400px) {
                             padding: 0px !important;
                         }
                     }
+
                     .nav-list {
                         padding: 50px 0 !important;
                         align-items: center;
                         background: var(--black);
 
                         width: 100%;
+
                         a {
                             width: clamp(250px, 50%, 400px);
                             display: flex;
                             justify-content: center;
                             padding-right: unset !important;
                             text-align: center;
+
                             .nav-pil {
                                 justify-content: center;
                                 width: 100%;
@@ -950,6 +1050,7 @@ body {
                                 padding-right: 0px !important;
                                 text-align: center;
                                 border-image-source: linear-gradient(to left, #181813, #181813);
+
                                 &::before {
                                     width: 50%;
                                     right: unset !important;
@@ -959,13 +1060,16 @@ body {
                     }
                 }
             }
+
             .content {
                 .scroll-progress {
                     display: none;
                 }
+
                 .welcome-box {
                     #text {
                         font-size: 40px;
+
                         #text-to-change {
                             &:after {
                                 height: 40px;
@@ -973,9 +1077,11 @@ body {
                         }
                     }
                 }
+
                 .AboutMe {
                     height: 950px;
                 }
+
                 .Foother {
                     form {
                         .form-line {
@@ -984,11 +1090,13 @@ body {
                             display: flex;
                             flex-wrap: wrap;
                             justify-content: center;
+
                             .input-group {
                                 width: 100%;
                                 position: relative;
                                 display: flex;
                                 justify-content: center;
+
                                 label {
                                     top: 25px;
                                     left: 20px;
@@ -1000,6 +1108,7 @@ body {
                                     margin: 15px 0;
                                 }
                             }
+
                             #form-submit {
                                 width: 100%;
                             }

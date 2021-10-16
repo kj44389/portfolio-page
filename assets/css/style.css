@@ -897,12 +897,22 @@ body .container .content .Projects .project {
 }
 
 body .container .content .Projects .project .project-image {
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
-body .container .content .Projects .project .project-image img {
+body .container .content .Projects .project .project-image .img {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position-x: center;
+  background-position-y: center;
   min-width: 250px;
+  min-height: 200px;
   width: 100%;
   border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
@@ -913,14 +923,26 @@ body .container .content .Projects .project .project-image img {
 
 body .container .content .Projects .project .project-image .project-icons {
   position: absolute;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   bottom: 10px;
-  right: 10px;
+  right: 0px;
+  background-color: #0a0a0a;
 }
 
 body .container .content .Projects .project .project-image .project-icons a i {
   color: var(--orange);
   font-size: 24px;
   margin: 5px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+body .container .content .Projects .project .project-image .project-icons a i:hover {
+  color: var(--white);
 }
 
 body .container .content .Projects .project .project-info {
@@ -1062,6 +1084,15 @@ body .container .content .Foother form .form-line #form-submit {
   font-family: var(--playfair);
   font-weight: 700;
   letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+body .container .content .Foother form .form-line #form-submit:hover {
+  background-color: #303030;
 }
 
 body .container .content .Foother .socials {

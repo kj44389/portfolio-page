@@ -16,7 +16,7 @@
         }
            
        
-   }, true)
+    }, true)
     
     // show menu
     document.querySelector('label[for="menu-btn"]').addEventListener('click', (event) => {
@@ -24,7 +24,6 @@
             document.querySelector('#menu-btn').classList.add('checked')
         }
     })
-
 
     //on scroll fill progress bar
     document.querySelector('.container').addEventListener('scroll', (event) => {
@@ -59,4 +58,12 @@
     })
 
     
- })();
+})();
+ 
+(() => {
+    let images = document.querySelectorAll('.img');
+    let i = 1;
+    images.forEach(image => {
+        image.style.backgroundImage = `url('/assets/images/project${i++}.png')`;
+    })
+})();
