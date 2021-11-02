@@ -39,3 +39,11 @@ async function insertText(element, text_from, ms) {
         await sleep(config.afterInsertingSleep);
     }
 })();
+
+(() => {
+    let images = document.querySelectorAll('.img');
+    let i = 1;
+    images.forEach(image => {
+        image.style.backgroundImage = `url('./assets/images/project${i++}.png')`;
+    })
+})();

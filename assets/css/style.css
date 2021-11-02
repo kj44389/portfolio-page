@@ -68,6 +68,8 @@
   --orange: #f79859;
   --black: #060605;
   --white: #ebebeb;
+  --green: #19c719;
+  --red: #bf1515;
   --scroll-height: 0%;
 }
 
@@ -869,7 +871,34 @@ body .container .content .Skills .skills-line .skill .skill-name {
   color: var(--black);
 }
 
-body .container .content .Projects {
+body .container .content .Projects-section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5%;
+}
+
+body .container .content .Projects-section .projects-header {
+  font-family: var(--playfair);
+  font-weight: 900;
+  font-size: 38px;
+  margin: 120px 0px;
+  color: var(--white);
+  z-index: 2;
+}
+
+body .container .content .Projects-section .projects {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -881,10 +910,9 @@ body .container .content .Projects {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 5%;
 }
 
-body .container .content .Projects .project {
+body .container .content .Projects-section .projects .project {
   min-width: 250px;
   width: 23rem;
   background-color: #0a0a0a;
@@ -896,12 +924,12 @@ body .container .content .Projects .project {
   margin: 30px;
 }
 
-body .container .content .Projects .project .project-image {
+body .container .content .Projects-section .projects .project .project-image {
   position: relative;
   width: 100%;
 }
 
-body .container .content .Projects .project .project-image .img {
+body .container .content .Projects-section .projects .project .project-image .img {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -921,7 +949,7 @@ body .container .content .Projects .project .project-image .img {
   -o-border-radius: 5px 5px 0 0;
 }
 
-body .container .content .Projects .project .project-image .project-icons {
+body .container .content .Projects-section .projects .project .project-image .project-icons {
   position: absolute;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -930,7 +958,7 @@ body .container .content .Projects .project .project-image .project-icons {
   background-color: #0a0a0a;
 }
 
-body .container .content .Projects .project .project-image .project-icons a i {
+body .container .content .Projects-section .projects .project .project-image .project-icons a i {
   color: var(--orange);
   font-size: 24px;
   margin: 5px;
@@ -941,29 +969,29 @@ body .container .content .Projects .project .project-image .project-icons a i {
   -o-transition: all 0.3s ease-in-out;
 }
 
-body .container .content .Projects .project .project-image .project-icons a i:hover {
+body .container .content .Projects-section .projects .project .project-image .project-icons a i:hover {
   color: var(--white);
 }
 
-body .container .content .Projects .project .project-info {
+body .container .content .Projects-section .projects .project .project-info {
   padding: 20px;
   line-height: 1.5;
 }
 
-body .container .content .Projects .project .project-info .project-name {
+body .container .content .Projects-section .projects .project .project-info .project-name {
   font-size: 20px;
   font-weight: 700;
   font-family: var(--playfair);
 }
 
-body .container .content .Projects .project .project-info .project-desc {
+body .container .content .Projects-section .projects .project .project-info .project-desc {
   margin-top: 10px;
   line-height: 1.3;
   font-size: 18px;
   font-family: var(--cormorant);
 }
 
-body .container .content .Projects .project .project-techstack {
+body .container .content .Projects-section .projects .project .project-techstack {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -974,7 +1002,7 @@ body .container .content .Projects .project .project-techstack {
   padding: 0 20px 20px 20px;
 }
 
-body .container .content .Projects .project .project-techstack .tech-pil {
+body .container .content .Projects-section .projects .project .project-techstack .tech-pil {
   background-color: var(--orange);
   padding: 5px 10px 5px 10px;
   margin: 15px 15px 0 0;
@@ -1029,6 +1057,9 @@ body .container .content .Foother form .form-line {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .container .content .Foother form .form-line .input-group {
@@ -1040,6 +1071,13 @@ body .container .content .Foother form .form-line .input-group {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
 }
 
 body .container .content .Foother form .form-line .input-group label {
@@ -1064,14 +1102,33 @@ body .container .content .Foother form .form-line .input-group .form-inputs {
   font-size: 18px;
 }
 
+body .container .content .Foother form .form-line .input-group .input-error {
+  position: relative;
+  border: 1px solid var(--red);
+}
+
+body .container .content .Foother form .form-line .input-group .input-error ~ label {
+  color: var(--red);
+}
+
+body .container .content .Foother form .form-line .input-group .input-error-text {
+  text-align: right;
+  color: var(--red);
+  font-weight: 700;
+  width: 100%;
+  padding-right: 10px;
+}
+
 body .container .content .Foother form .form-line .input-group #form-msg {
   min-height: 140px;
   line-height: 1.5;
+  resize: horizontal;
 }
 
 body .container .content .Foother form .form-line #form-submit {
   width: clamp(200px, calc(100vw - 1em), 300px);
   height: 40px;
+  margin-top: 15px;
   border: none;
   border-radius: 5px;
   background-color: var(--orange);
@@ -1116,6 +1173,88 @@ body .container .content .Foother .socials i {
 
 body .container .content .Foother .credits {
   text-align: center;
+}
+
+body .container .content .success-card {
+  border: 1px solid var(--green);
+}
+
+body .container .content .success-card .send-image {
+  border-right: 1px solid var(--green);
+}
+
+body .container .content .success-card .send-image i {
+  color: var(--green);
+}
+
+body .container .content .error-card {
+  border: 1px solid var(--red);
+}
+
+body .container .content .error-card .send-image {
+  border-right: 1px solid var(--red);
+}
+
+body .container .content .error-card .send-image i {
+  color: var(--red);
+}
+
+body .container .content .card-visible {
+  opacity: 1 !important;
+}
+
+body .container .content .send-status-card {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  height: 80px;
+  z-index: 20;
+  width: clamp(270px, 100%, 490px);
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body .container .content .send-status-card .send-image {
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .content .send-status-card .send-image i {
+  font-size: 30px;
+}
+
+body .container .content .send-status-card .send-info {
+  width: calc(100% - 80px);
+  color: var(--black);
+  padding: 10px;
+  font-size: clamp(19px, calc(2vw + .1rem), 22px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (min-width: 601px) and (max-width: 1000px) {
@@ -1217,7 +1356,11 @@ body .container .content .Foother .credits {
     margin: 15px 0;
   }
   body .container .content .Foother form .form-line #form-submit {
-    width: 100%;
+    width: clamp(300px, calc(100vw - 60px), 670px);
+  }
+  body .container .content .send-status-card {
+    right: 0px;
+    bottom: 0px;
   }
 }
 /*# sourceMappingURL=style.css.map */
