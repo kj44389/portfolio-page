@@ -2,7 +2,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     // SCROLL REVEAL
     const sr = ScrollReveal();
-//     const sr = ScrollReveal({ viewFactor: 0 , viewOffset { top: 60}});
 
     //ABOUT ME
     sr.reveal(".about-me-headline", {
