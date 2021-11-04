@@ -123,19 +123,20 @@ body {
   background: var(--black);
   color: var(--white);
 
-  .loading-body{
+  .loading-body {
     opacity: 1;
     width: 100%;
     height: 100%;
     display: flex;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     justify-content: center;
     align-items: center;
     flex-flow: column;
     position: fixed;
+    pointer-events: none;
     z-index: 200;
     background-color: var(--black);
-    .loading-spiner{
+    .loading-spiner {
       width: 200px;
       height: 200px;
       .loading-circles div {
@@ -144,8 +145,10 @@ body {
         border-style: solid;
         opacity: 1;
         border-radius: 50%;
-        animation: loading-animation  1.3157894736842106s cubic-bezier(0,0.2,0.8,1) infinite;
-      }.loading-circles div:nth-child(1) {
+        animation: loading-animation 1.3157894736842106s
+          cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .loading-circles div:nth-child(1) {
         border-color: #f79859;
         animation-delay: 0s;
       }
@@ -168,11 +171,12 @@ body {
         backface-visibility: hidden;
         transform-origin: 0 0; /* see note above */
       }
-      .loading-circles div { box-sizing: content-box; }
-
-
+      .loading-circles div {
+        box-sizing: content-box;
+      }
     }
-    .loading-text{}
+    .loading-text {
+    }
   }
 
   .container {
@@ -181,7 +185,7 @@ body {
     position: relative;
     scroll-behavior: smooth;
     background-size: cover;
-    overflow-x: hidden;
+    overflow-x: clip;
     overflow-y: visible;
 
     header {
@@ -624,22 +628,6 @@ body {
         height: 1100px;
         background: var(--black);
         position: relative;
-
-        .water-mark {
-          font-size: clamp(80px, calc(35vw + 1em), 30em);
-          position: absolute;
-          width: 5ch;
-          top: 0;
-          left: 10%;
-          transform: rotate(-10deg) translateX(-10%) translateY(-10%);
-          color: #333333;
-          -webkit-transform: rotate(-10deg) translateX(-10%) translateY(-10%);
-          -moz-transform: rotate(-10deg) translateX(-10%) translateY(-10%);
-          -ms-transform: rotate(-10deg) translateX(-10%) translateY(-10%);
-          -o-transform: rotate(-10deg) translateX(-10%) translateY(-10%);
-          opacity: 0.1;
-          z-index: 1;
-        }
 
         .about-me-headline {
           position: absolute;
@@ -1151,7 +1139,7 @@ body {
           width: calc(100% - 80px);
           color: var(--black);
           padding: 10px;
-          font-size: clamp(19px, calc(2vw + .1rem), 22px);
+          font-size: clamp(19px, calc(2vw + 0.1rem), 22px);
           display: flex;
           text-align: center;
           justify-content: center;
@@ -1280,10 +1268,10 @@ body {
             }
           }
         }
-	  .send-status-card {
-		right: 0px;
-		bottom: 0px;
-	}
+        .send-status-card {
+          right: 0px;
+          bottom: 0px;
+        }
       }
     }
   }

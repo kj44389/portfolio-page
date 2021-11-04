@@ -1,3 +1,4 @@
+
 function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -46,4 +47,20 @@ async function insertText(element, text_from, ms) {
     images.forEach(image => {
         image.style.backgroundImage = `url('./assets/images/project${i++}.png')`;
     })
+    // window.sr = ScrollReveal({ reset: true });
+
+    // // SCROLL REVEAL
+    // // sr.reveal('#text');
+    // // sr.reveal('.scroll-down');
+
+    // // sr.reveal('.about-me-headline')
+    // // sr.reveal('.about-me-text')
+    // // sr.reveal('.about-me-image')
+
+    // // sr.reveal('.skills-header')
+    // // sr.reveal('.skills-level-header')
+    // // sr.reveal('.skill')
+    // ScrollReveal.reveal('.about-me-image')
+
+
 })();
