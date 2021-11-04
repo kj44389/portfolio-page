@@ -763,8 +763,11 @@ body .container .content .AboutMe .about-me-text {
   position: absolute;
   top: 450px;
   left: 50%;
+  transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   z-index: 3;
   font-family: var(--cormorant);
   font-size: clamp(18px, calc(2vw + 1rem), 26px);
@@ -780,8 +783,11 @@ body .container .content .AboutMe .about-me-image {
   position: absolute;
   top: 220px;
   left: 50%;
+  transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   z-index: 2;
   height: 400px;
   width: 400px;
