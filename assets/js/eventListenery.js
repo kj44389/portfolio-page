@@ -28,11 +28,8 @@ import {clearInputs} from './clearInputs.js';
 
     //on scroll fill progress bar
     document.querySelector('.container').addEventListener('scroll', (event) => {
-        console.log('in');
         let scrollHeight = document.querySelector('.container').scrollHeight;
         let scrollPos = document.querySelector('.container').scrollTop;
-        console.log(scrollHeight, scrollPos);
-
         let value = (scrollPos / (scrollHeight - window.innerHeight)).toFixed(2) * 100;
         let points = document.querySelectorAll('.scroll-point');
         if (value >= 0 && value <= 16) {
@@ -50,7 +47,6 @@ import {clearInputs} from './clearInputs.js';
         } else if (value >= 98 && value <= 100) {
             points[4].classList.add('point-active');
         }
-        console.log(value);
         document.documentElement.style.setProperty('--scroll-height', value + '%');
     });
 
