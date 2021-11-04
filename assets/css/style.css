@@ -233,7 +233,7 @@ body .container {
   position: relative;
   scroll-behavior: smooth;
   background-size: cover;
-  overflow-x: clip;
+  overflow-x: hidden;
   overflow-y: visible;
 }
 
