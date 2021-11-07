@@ -16,10 +16,12 @@ async function insertText(element, text_from, ms) {
         await sleep(ms); // then wait
     }
 }
-(async () => {
+
+async function typeEffect() {
     // CONFIG SECTION
+
     let config = {
-        initialSleep: 1000, // in (ms), how much time before starting code
+        initialSleep: 1400, // in (ms), how much time before starting code
         operationSleep: 50, // in (ms), how much time before cutting/adding letter
         afterPopingSleep: 1000, // in (ms), how much time to wait before adding new text
         afterInsertingSleep: 2000, // in (ms), how much time to wait after adding new text. 
@@ -39,9 +41,10 @@ async function insertText(element, text_from, ms) {
         await insertText(element, x, config.operationSleep); // inserting text from array
         await sleep(config.afterInsertingSleep);
     }
-})();
+}
 
 (() => {
+    document.addEventListener('DOMContentLoaded', typeEffect);
     let images = document.querySelectorAll('.img');
     let i = 1;
     images.forEach(image => {

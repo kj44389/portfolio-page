@@ -1075,6 +1075,7 @@ body .container .content .Foother form .form-line .input-group .form-inputs {
   margin: 15px 15px;
   border: 1px solid var(--black);
   font-size: 18px;
+  cursor: text;
 }
 
 body .container .content .Foother form .form-line .input-group .input-error {
