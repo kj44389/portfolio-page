@@ -10,7 +10,11 @@ class scrollReveal {
         interval: interval = 0,
     }) {
         const el = document.querySelectorAll(element);
-        let observer = new IntersectionObserver(this.execute);
+        let observer = new IntersectionObserver(this.execute,{
+            root: document.querySelector('.container'),
+            rootMargin: '0px',
+            threshold: 0,
+        });
         let i = 0;
         el.forEach((tmp) => {
             tmp.dataset.transform = tmp.style.transform;
