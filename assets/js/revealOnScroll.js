@@ -13,7 +13,7 @@ class scrollReveal {
         let observer = new IntersectionObserver(this.execute,{
             root: document.querySelector('.container'),
             rootMargin: '0px',
-            threshold: 0,
+            threshold: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0],
         });
         let i = 0;
         el.forEach((tmp) => {
@@ -30,6 +30,7 @@ class scrollReveal {
                 entry.target.style.webkitTransform = entry.target.dataset.transform;
                 entry.target.style.opacity = 1;
                 entry.target.style.visibility = 'visible';
+                observer.unobserve(entry.target);
                 delete entry.target.dataset.transform;
             }
         });
