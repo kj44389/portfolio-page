@@ -1007,6 +1007,85 @@ body .container .content .Foother .contact-header {
   padding: 25px 0 50px 0;
 }
 
+body .container .content .Foother .contact-content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .content .Foother .contact-content .contact-info {
+  width: clamp(200px, 100%, 700px);
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: var(--playfair);
+  font-size: 25px;
+  margin: 35px 0;
+}
+
+body .container .content .Foother .contact-content .contact-info .contact-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .content .Foother .contact-content .contact-info .contact-line .contact-info-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  transform: translateY(15%);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  -webkit-transform: translateY(15%);
+  -moz-transform: translateY(15%);
+  -ms-transform: translateY(15%);
+  -o-transform: translateY(15%);
+}
+
+body .container .content .Foother .contact-content .contact-info .contact-line .contact-info-detail {
+  font-weight: 400;
+  font-family: var(--cormorant);
+}
+
+body .container .content .Foother .contact-content .contact-info .contact-line .contact-info-detail a {
+  text-decoration: none;
+  color: var(--black);
+}
+
 body .container .content .Foother form {
   width: 100%;
   display: -webkit-box;
